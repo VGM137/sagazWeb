@@ -1,0 +1,83 @@
+.pedidos h1{
+  margin: 5px 15%;
+  color: white
+}
+
+.pedidos{
+  height: fit-content;
+  width: 80%;
+  background-color: black;
+  color: white;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-sizing: border-box;
+}
+  .pedidos-texto{
+    width: 40%;
+    height: 90%;
+    display: block;
+    color: white;
+    align-items: center;
+  }
+  .pedidos-texto h1, h2{
+    color: white;
+    height: auto;
+    width: 90%;
+    margin: 5px auto;
+  }
+  .pedidos-form{
+    height: 100%;
+    width: 90%;
+    margin: 10px auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .pedidos-nombre{
+    height: 10%;
+    width: 90%;
+    font-family: inherit;
+    font-size: 1em;
+    margin: 10px auto;
+    padding: 5px;
+    display: flex;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .pedidos-mail{
+    height: 10%;
+    width: 90%;
+    font-family: inherit;
+    font-size: 1em;
+    margin: 10px auto;
+    padding: 5px;
+    display: flex;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .pedidos-mensaje{
+    height: 100px;
+    width: 90%;
+    font-family: inherit;
+    font-size: 1em;
+    margin: 10px auto;
+    padding: 5px;
+    display: block;
+    border-radius: 5px;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+  .pedidos-button{
+    display: flex;
+    height: auto;
+    margin: 20px auto;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 1.2em;
+/*     box-sizing: content-box; */
+  }
