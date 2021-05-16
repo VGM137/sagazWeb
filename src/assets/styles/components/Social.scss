@@ -1,0 +1,57 @@
+.social{
+  color: white;
+  background-color: black;
+  height: fit-content;
+  width: 100%;
+  align-items: center;
+  display: inline-block;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.social h1{
+  text-align: center;
+  margin-left: 0;
+}
+.social-links{
+  margin: 10px;
+  display: flex;
+}
+.icono-redes{
+  width: fit-content;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  text-decoration: none;
+  font-family: "Signika";
+}
+.social i {
+  font-size: 2em;
+  display: block;
+  align-items: center;
+  background-size: 50px 50px;
+  margin: 10px;
+  text-decoration: none;
+}
+.social a{
+  color: white;
+}
+.icon{
+  height: 40px;
+  width: 40px;
+  color: white;
+  filter: brightness(0) invert(1)
+}
+
+@media screen and (max-width: 681px){
+  .social-links{
+    display: block;
+  }
+  .icono-redes{
+    margin: 10px auto
+  }
+}

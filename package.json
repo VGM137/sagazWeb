@@ -23,6 +23,7 @@
     "redux": "^4.1.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^5.5.0",
     "css-loader": "^5.2.4",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",

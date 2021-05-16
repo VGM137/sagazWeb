@@ -59,7 +59,8 @@ ul{
   max-width: 100vw;
   display: grid;
   grid-template-columns: 20% 80%;
-  grid-template-areas: "bar-menu contenido";
+  grid-template-areas: "bar-menu contenido"
+                       "bar-menu footer";
   justify-content: inherit;
   align-items: inherit;
   position: relative;
@@ -76,25 +77,39 @@ ul{
   .App{
     height: 100vh;
     max-width: 100vw;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 20% 80%;
-    grid-template-areas: 'barMenu'
-                         'contenido';
+    display: block;
     justify-content: inherit;
     align-items: inherit;
     position: relative;
     background-color: rgb(230, 0, 0);
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  .App::-webkit-scrollbar{
+    width: 10px;
+  }
+  .App::-webkit-scrollbar-track{
+    background: rgba(211, 211, 211, 0);
+    border-radius: 5px;
+  }
+  .App::-webkit-scrollbar-thumb{
+    background: rgba(128, 128, 128, 0);
+    border-radius: 5px;
+  }
+  .App:hover::-webkit-scrollbar-track{
+    background: rgba(211, 211, 211, .6);
+  }
+  .App:hover::-webkit-scrollbar-thumb{
+    background: rgba(128, 128, 128, .6);
   }
 }
 
 @media screen and (max-width: 620px){
   .App{
-    height: 100vh;
-    max-width: 100vw;
-    display: block;
     justify-content: inherit;
     align-items: inherit;
-    overflow: scroll;
+  }
+  .App::-webkit-scrollbar{
+    display: none
   }
 }
