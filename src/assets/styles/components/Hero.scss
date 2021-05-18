@@ -31,10 +31,16 @@
 }
 
 @media screen and (max-width: 1025px){
+  .hero-spacer{
+    height: 80px;
+    position: absolute;
+    top: 0;
+  }
   .hero{
     height: 300px;
     grid-template-columns: 300px 300px;
     grid-template-rows: 300px;
+    scroll-margin-top: 35em;
   }
 }
 

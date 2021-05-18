@@ -1,8 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import '../assets/styles/components/NavBar.scss'
 import logo from '../assets/static/zagaz-04.png'
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+  console.log()
+  const heroIsVisible = props.view.hero
+  const contatcIsVisible = props.view.contact
   return (
     <div className="bar-menu" id="bar-menu">
       <div className="logo">
@@ -14,13 +19,20 @@ const NavBar = () => {
       <nav className="bar-menu-icons">
         <ol>
           <li>
-            <a id="menu-del-dia" className="guisado yellow" href="#hero" >Guisados</a>
+            {heroIsVisible
+              ?
+                <a id="menu-del-dia" className="guisado yellow" href='#hero-spacer'>Menú</a>
+              :
+                <a id="menu-del-dia" className="guisado" href='#hero-spacer'>Menú</a>
+            }
           </li>
           <li>
-            <a id="pregunta" className="pedir" href="#comanda" >Cotización</a>
-          </li>
-          <li>
-            <a id="contacto" className="contacto" href="#contactMe" >Contacto</a>
+            {contatcIsVisible
+              ?
+                <a id="contacto" className="contacto yellow" href='#form-spacer'>Contacto</a>
+              :
+                <a id="contacto" className="contacto" href='#form-spacer'>Contacto</a>
+            }
           </li>
         </ol>
       </nav>
@@ -28,4 +40,10 @@ const NavBar = () => {
   )
 }
 
-export default NavBar;
+const mapStateToProps = state => {
+  return {
+    view: state.view,
+  }
+}
+
+export default connect(mapStateToProps, null)(NavBar);

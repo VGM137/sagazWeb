@@ -1,15 +1,16 @@
 import React from 'react';
 import Hero from '../components/Hero'
-import Cotizacion from './Cotizacion';
+import Formulario from './Formulario';
 import Social from './Social'
 import Footer from './Footer'
 import '../assets/styles/components/Content.scss'
 
 const Content = () => {
+
   return (
-    <div className='content'>
+    <div id='content' className='content' >
       <Hero />
-      <Cotizacion/>
+      <Formulario />
       <Social />
       <Footer />
     </div>

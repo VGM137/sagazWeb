@@ -40,6 +40,25 @@ const reducer = (state, action) => {
         }
       }
 
+    case 'SET_VISIBILITY':
+      if(action.payload.hero){
+        return {
+          ...state,
+          view:{
+            hero: action.payload.hero,
+            contact: false
+          }
+        }
+      }else if(action.payload.hero == false){
+        return {
+          ...state,
+          view:{
+            hero: false,
+            contact: true
+          }
+        }
+      }
+
     default :
     return state;
   }

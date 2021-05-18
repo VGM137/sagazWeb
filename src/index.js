@@ -10,6 +10,10 @@ const initialState = {
     name: '',
     email: '',
     message: ''
+  },
+  view: {
+    hero: false,
+    contact: false
   }
 }
 
