@@ -1,6 +1,13 @@
 .form h1{
-  margin: 5px 15%;
-  color: white
+  width: 50%;
+  margin: 0 auto;
+  color: white;
+}
+.form h2{
+  margin: 20px auto;
+  color: white;
+  font-size: 1.2em;
+  width: 80%;
 }
 
 .form{
@@ -18,83 +25,101 @@
   border-top-right-radius: 20px;
   box-sizing: border-box;
 }
-  .form-texto{
-    width: 40%;
-    height: 90%;
-    display: block;
-    color: white;
-    align-items: center;
-  }
-  .form-texto h1, h2{
-    color: white;
-    height: auto;
-    width: 90%;
-    margin: 5px auto;
-  }
-  .form-form{
-    height: 100%;
-    width: 90%;
-    margin: 10px auto;
-    justify-content: center;
-    align-items: center;
-  }
-  .form-nombre{
-    height: 10%;
-    width: 90%;
-    font-family: inherit;
-    font-size: 1em;
-    margin: 10px auto;
-    padding: 5px;
-    display: flex;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  .form-mail{
-    height: 10%;
-    width: 90%;
-    font-family: inherit;
-    font-size: 1em;
-    margin: 10px auto;
-    padding: 5px;
-    display: flex;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  .form-mensaje{
-    height: 100px;
-    width: 90%;
-    font-family: inherit;
-    font-size: 1em;
-    margin: 10px auto;
-    padding: 5px;
-    display: block;
-    border-radius: 5px;
-    overflow: auto;
-    box-sizing: border-box;
-  }
-  .form-button {
-    display: flex;
-    text-decoration: none;
-    height: 40px;
-    width: fit-content;
-    margin: 20px auto;
-    padding: 10px;
-    color: black;
-    border-radius: 50px;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    border: none;
-  }
-  .form-button:disabled{
-    background-color: rgb(114, 114, 114);
-  }
-  .form-button:hover:enabled{
-    background-color: rgba(255, 206, 0, 1);
-  }
+.form-texto{
+  width: 40%;
+  height: 90%;
+  display: block;
+  color: white;
+  align-items: center;
+}
+.form-texto h1, h2{
+  color: white;
+  height: auto;
+  width: 90%;
+  margin: 5px auto;
+}
+.form-form{
+  height: 100%;
+  width: 90%;
+  margin: 10px auto;
+  justify-content: center;
+  align-items: center;
+}
+.form-nombre{
+  height: 10%;
+  width: 90%;
+  font-family: inherit;
+  font-size: 1em;
+  margin: 10px auto;
+  padding: 5px;
+  display: flex;
+  border: solid 4px transparent;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+}
+.form-mail{
+  height: 10%;
+  width: 90%;
+  font-family: inherit;
+  font-size: 1em;
+  margin: 10px auto;
+  padding: 5px;
+  display: flex;
+  border: solid 4px transparent;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+}
+.form-mensaje{
+  height: 100px;
+  width: 90%;
+  font-family: inherit;
+  font-size: 1em;
+  margin: 10px auto;
+  padding: 5px;
+  display: block;
+  border: solid 4px transparent;
+  border-radius: 5px;
+  overflow: auto;
+  box-sizing: border-box;
+  outline: none;
+}
+.form-button {
+  display: flex;
+  text-decoration: none;
+  height: 40px;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 10px;
+  color: black;
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+.form-button:disabled{
+  background-color: rgb(114, 114, 114);
+}
+.form-button:hover:enabled{
+  background-color: rgba(255, 206, 0, 1);
+}
+.form-item:invalid:focus{
+  border: solid 4px red
+}
+.form-item:valid:focus{
+  border: solid 4px rgb(2, 197, 2)
+}
 @media screen and (max-width: 1025px){
   .form-spacer{
     height: 80px;
+  }
+}
+
+@media screen and (max-width: 620px){
+  .form h1{
+    width: 80%
   }
 }

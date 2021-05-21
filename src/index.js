@@ -8,7 +8,10 @@ import App from './routes/App.js'
 const initialState = {
   form: {
     name: '',
-    email: '',
+    email: {
+      value: '',
+      validation: false
+    },
     message: ''
   },
   view: {

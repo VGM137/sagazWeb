@@ -8,7 +8,7 @@ import '../assets/styles/components/Content.scss'
 const Content = () => {
 
   return (
-    <div id='content' className='content' >
+    <div id='content' className='content'>
       <Hero />
       <Formulario />
       <Social />

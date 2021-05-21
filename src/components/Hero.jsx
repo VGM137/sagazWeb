@@ -8,8 +8,8 @@ import menu from '../assets/static/menu-del-dia.jpg'
 
 const Hero = (props) => {
   
-  const { ref, inView} = useInView({
-    threshold: 0,
+  const { ref, inView, entry} = useInView({
+    threshold: .1,
   });
 
   const handleVisibility = () => {

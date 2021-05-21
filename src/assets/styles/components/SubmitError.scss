@@ -1,0 +1,25 @@
+.submit-container{
+  height: fit-content;
+  min-height: 100px;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 20px;
+  background-color: #c2c2c281;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.submit-message{
+  text-align: center;
+  margin: 0 100px;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 620px){
+  .submit-message{
+    margin: 20px 30px;
+    font-size: 1.1em;
+  }
+}

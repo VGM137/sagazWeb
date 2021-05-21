@@ -7,7 +7,10 @@ const reducer = (state, action) => {
           ...state,
           form: {
             name: action.payload.name,
-            email: state.form.email,
+            email: {
+              value: state.form.email.value,
+              validation: state.form.email.validation
+            },
             message: state.form.message
           }
         }
@@ -16,7 +19,10 @@ const reducer = (state, action) => {
           ...state,
           form: {
             name: state.form.name,
-            email: action.payload.email,
+            email: {
+              value: action.payload.email,
+              validation: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(action.payload.email)
+            },
             message: state.form.message
           }
         }
@@ -25,7 +31,10 @@ const reducer = (state, action) => {
           ...state,
           form: {
             name: state.form.name,
-            email: state.form.email,
+            email: {
+              value: state.form.email.value,
+              validation: state.form.email.validation
+            },
             message: action.payload.message
           }
         }
@@ -35,7 +44,11 @@ const reducer = (state, action) => {
       return{
         ...state,
         form: {
-          email: '',
+          name: '',
+          email: {
+            name: '',
+            validation: false,
+          },
           message: ''
         }
       }

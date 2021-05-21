@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 import '../assets/styles/components/NavBar.scss'
 import logo from '../assets/static/zagaz-04.png'
 
 const NavBar = (props) => {
-
-  console.log()
   const heroIsVisible = props.view.hero
   const contatcIsVisible = props.view.contact
   return (
     <div className="bar-menu" id="bar-menu">
       <div className="logo">
-        <figure className="logo-container">
-          <img className="logo-img" src={logo} alt="logo" width="auto" />
-        </figure>
+        <Link to='/'>
+          <figure className="logo-container">
+            <img className="logo-img" src={logo} alt="logo" width="auto" />
+          </figure>
+        </Link>
         <h2 className="slogan">El deleite de su paladar</h2>
       </div>
       <nav className="bar-menu-icons">
