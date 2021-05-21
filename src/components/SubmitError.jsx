@@ -11,8 +11,8 @@ const SubmitError = (props) => {
     <>
       <div id='form-spacer' className='form-spacer'>
       </div>
-      <div className='submit-container'>
-        <h1 className='submit-message'>Algo saló mal, por favor intentalo de nuevo.</h1>
+      <div className='error-container'>
+        <h1 className='error-message'>Algo saló mal, por favor intentalo de nuevo.</h1>
       </div>
     </>
   )
