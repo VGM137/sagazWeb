@@ -47,7 +47,7 @@ const Formulario = (props) => {
       </div>
       <div id="form" className="form">
         <h1 className="">Prepara tu evento con una taquiza</h1>
-        <h2 className="">Pide tu cotización, nos pondremos en contacto contigo a la brevedad.</h2>
+        <h2 className="">Escoge entre una variedad de guisados, pide tu cotización, nos pondremos en contacto contigo a la brevedad.</h2>
         <form id='form-form' className="form-form" onSubmit={handleSubmit}>
           <input 
             type="text" 
