@@ -1,6 +1,9 @@
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports= {
   mode: 'development',
@@ -47,14 +50,7 @@ module.exports= {
       },
       {
         test: /\.(png|gif|jpg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'assets/[hash].[exit]'
-            }
-          }
-        ]
+        type: 'asset/resource',
       }
     ]
   },
@@ -69,5 +65,13 @@ module.exports= {
    new MiniCssExtractPlugin({
      filename: 'assets/[name].css'
     }),
-  ]
+    new CleanWebpackPlugin(),
+  ],
+  optimization:{
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin(),
+    ]
+  }
 }
