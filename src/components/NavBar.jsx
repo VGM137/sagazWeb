@@ -10,11 +10,11 @@ const NavBar = (props) => {
   return (
     <div className="bar-menu" id="bar-menu">
       <div className="logo">
-        <Link to='/'>
           <figure className="logo-container">
-            <img className="logo-img" src={logo} alt="logo" width="auto" />
+            <Link to='/' className='link'>
+              <img className="logo-img" src={logo} alt="logo" width="auto" />
+            </Link>
           </figure>
-        </Link>
         <h2 className="slogan">El deleite de su paladar</h2>
       </div>
       <nav className="bar-menu-icons">

@@ -21,7 +21,7 @@ const reducer = (state, action) => {
             name: state.form.name,
             email: {
               value: action.payload.email,
-              validation: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(action.payload.email)
+              validation: /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(action.payload.email)
             },
             message: state.form.message
           }

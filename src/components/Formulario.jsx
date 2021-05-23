@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useForm, ValidationError } from '@formspree/react';
+import { useForm } from '@formspree/react';
 import { connect } from 'react-redux';
 import { formChange } from '../actions'
 import '../assets/styles/components/Form.scss'
@@ -9,14 +9,6 @@ import SubmitError from '../components/SubmitError'
 const Formulario = (props) => {
 
   const [state, handleSubmit] = useForm("mknkjjgo");
-  
-  useEffect(() => {
-    console.log('Component did mount')
-    return () => {
-      props.clearForm()
-      console.log('Unmounting')
-    }
-  }, [])
 
   const handleChange = (e) => {
     if(e.target.value == ''){
@@ -46,8 +38,8 @@ const Formulario = (props) => {
       <div id='form-spacer' className='form-spacer'>
       </div>
       <div id="form" className="form">
-        <h1 className="">Prepara tu evento con una taquiza</h1>
-        <h2 className="">Escoge entre una variedad de guisados, pide tu cotización, nos pondremos en contacto contigo a la brevedad.</h2>
+        <h1 className="">Prepara tu evento con una taquiza!</h1>
+        <h2 className="">Escoge entre una amplia variedad de guisados, pide tu cotización, nos pondremos en contacto contigo a la brevedad.</h2>
         <form id='form-form' className="form-form" onSubmit={handleSubmit}>
           <input 
             type="text" 
@@ -59,10 +51,7 @@ const Formulario = (props) => {
             value={props.name}
             minLength='2'
             required/>
-          <ValidationError 
-            prefix="Name" 
-            field="name"
-            errors={state.errors}/>
+          <h3 alt='*Por favor ingresa un nombre con más de dos caracteres.' className='name-advice'></h3>
           <input 
             type="email" 
             name="email" 
@@ -72,10 +61,7 @@ const Formulario = (props) => {
             onChange={handleChange}
             value={props.email.value}
             required/>
-          <ValidationError 
-            prefix="Email" 
-            field="email"
-            errors={state.errors}/>
+          <h3 alt='*Por favor ingresa un correo electrónico válido.' className='email-advice'></h3>
           <textarea 
             type="text" 
             name="message" 
@@ -87,16 +73,12 @@ const Formulario = (props) => {
             minLength='10'
             required>
           </textarea>
-          <ValidationError 
-            prefix="Message" 
-            field="message"
-            errors={state.errors}/>
+          <h3 alt='*Cuentanos más, por favor ingresa al menos 10 caracteres.' className='message-advice'></h3>
           <button 
             type='submit'
             formMethod='post'
             className="form-button" 
             id="form-button" 
-            onClick={()=>useEffect}
             disabled={props.name.length < 2 || !props.email.validation || props.message.length < 10}>
             Enviar
           </button>

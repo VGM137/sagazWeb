@@ -8,6 +8,7 @@
   color: white;
   font-size: 1.2em;
   width: 80%;
+  line-height: inherit;
 }
 
 .form{
@@ -50,20 +51,31 @@
   width: 90%;
   font-family: inherit;
   font-size: 1em;
-  margin: 10px auto;
+  margin: 0 auto;
   padding: 5px;
   display: flex;
   border: solid 4px transparent;
   border-radius: 5px;
   box-sizing: border-box;
   outline: none;
+}
+.name-advice{
+  margin: 8px 60px;
+  font-size: .8em;
+  min-height: 16px;
+  color: white;
+  content: '';
+}
+.form-nombre:focus:invalid ~ .name-advice:after{
+  content: attr(alt);
+  height: auto;
 }
 .form-mail{
   height: 10%;
   width: 90%;
   font-family: inherit;
   font-size: 1em;
-  margin: 10px auto;
+  margin: 0 auto;
   padding: 5px;
   display: flex;
   border: solid 4px transparent;
@@ -71,12 +83,22 @@
   box-sizing: border-box;
   outline: none;
 }
+.email-advice{
+  margin: 8px 60px;
+  font-size: .8em;
+  min-height: 16px;
+  color: white;
+  content: '';
+}
+.form-mail:focus:invalid ~ .email-advice:after{
+  content: attr(alt);
+}
 .form-mensaje{
   height: 100px;
   width: 90%;
   font-family: inherit;
   font-size: 1em;
-  margin: 10px auto;
+  margin: 0 auto;
   padding: 5px;
   display: block;
   border: solid 4px transparent;
@@ -84,6 +106,16 @@
   overflow: auto;
   box-sizing: border-box;
   outline: none;
+}
+.message-advice{
+  margin: 8px 60px;
+  font-size: .8em;
+  min-height: 16px;
+  color: white;
+  content: '';
+}
+.form-mensaje:focus:invalid ~ .message-advice:after{
+  content: attr(alt);
 }
 .form-button {
   display: flex;
@@ -109,6 +141,7 @@
 .form-item:invalid:focus{
   border: solid 4px red
 }
+
 .form-item:valid:focus{
   border: solid 4px rgb(2, 197, 2)
 }
@@ -121,5 +154,14 @@
 @media screen and (max-width: 620px){
   .form h1{
     width: 80%
+  }
+  .name-advice{
+    margin: 8px 15px;
+  }
+  .email-advice{
+    margin: 8px 15px;
+  }
+  .message-advice{
+    margin: 8px 15px;
   }
 }
