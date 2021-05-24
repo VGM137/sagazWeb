@@ -1,3 +1,4 @@
+
 .hero {
   height: 400px;
   width: fit-content;
@@ -29,6 +30,28 @@
   display: flex;
   justify-content: center;
 }
+.hero-info{
+  width: 80%;
+  margin: 0 auto;
+}
+.hero-title{
+  font-size: 2em;
+}
+.hero-text{
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+}
+.subtextos{
+  font-size: 1.2em;
+  line-height: 1.2em; 
+}
+.hero-link{
+  color: rgba(255, 206, 0, 1)
+}
+.hero-link:hover{
+  font-size: 1.5em;
+}
 
 @media screen and (max-width: 1025px){
   .hero-spacer{
@@ -49,6 +72,12 @@
     height: 600px;
     grid-template-columns: 300px;
     grid-template-rows: 300px  300px;
+  }
+  .hero-text{
+    text-align: left;
+  }
+  .hero-title{
+    font-size: 1.8em;
   }
   .hero-imgContainer{
     height: 100%;

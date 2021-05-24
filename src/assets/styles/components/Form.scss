@@ -17,7 +17,7 @@
   background-color: black;
   color: white;
   display: block;
-  margin: 0 auto;
+  margin: 80px auto 0;
   padding: 20px;
   align-items: center;
   justify-content: space-between;
@@ -146,6 +146,9 @@
   border: solid 4px rgb(2, 197, 2)
 }
 @media screen and (max-width: 1025px){
+  .form{
+    margin: 0 auto;
+  }
   .form-spacer{
     height: 80px;
   }
