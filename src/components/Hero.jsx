@@ -30,16 +30,16 @@ const Hero = (props) => {
         <figure className="hero-menu" action="index.html" method="post">
           <img width='auto' className="hero-menuImg" src={menu} alt="" />
         </figure>
-      </div>
-      <div className='hero-info'>
-        <h1 className='hero-text hero-title'>Servicio a domicilio en:</h1>
-        <h2 className='hero-text subtextos'>Vertiz Narvarte, Narvarte Oriente y Narvarte Poniente</h2>
-        <h2 className='hero-text subtextos'>Lunes a sábado, de 10:30am hasta agotar existencias.</h2>
-          <h2 className='hero-text subtextos'>
-            <a className='subtextos hero-link' href="https://wa.me/c/5215528947194">
-            ¡Comunicate con nosotros aquí!
-            </a>
-          </h2>
+        <div className='hero-info'>
+          <h1 className='hero-text hero-title'>Servicio a domicilio en:</h1>
+          <h2 className='hero-text subtextos'>Vertiz Narvarte, Narvarte Oriente y Narvarte Poniente</h2>
+          <h2 className='hero-text subtextos'>Lunes a sábado, de 10:30am hasta agotar existencias.</h2>
+            <h2 className='hero-text subtextos'>
+              <a className='subtextos hero-link' href="https://wa.me/c/5215528947194">
+              ¡Comunicate con nosotros aquí!
+              </a>
+            </h2>
+        </div>
       </div>
     </>
   )
