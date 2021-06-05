@@ -5,13 +5,9 @@ import Content from '../components/Content'
 import '../assets/styles/App.scss'
 
 const Home = () => {
-/*   const handleScroll = (ev) => {
-    console.log(ev.target.scrollTop)
-    console.log(ev)
-  } */
-  
+
   return (
-    <div className='App' /* onScroll={handleScroll} */>
+    <div className='App'>
       <NavBar />
       <Content />
     </div>

@@ -1,5 +1,5 @@
 const reducer = (state, action) => {
-  
+
   switch(action.type){
     case 'FORM_CHANGE':
       if(action.payload.name){
@@ -39,7 +39,7 @@ const reducer = (state, action) => {
           }
         }
       }
-    
+
     case 'CLEAR_FORM':
       return{
         ...state,
@@ -59,15 +59,26 @@ const reducer = (state, action) => {
           ...state,
           view:{
             hero: action.payload.hero,
-            contact: false
+            contact: false,
+            guisados: false
           }
         }
-      }else if(action.payload.hero == false){
+      }else if(action.payload.guisados){
         return {
           ...state,
           view:{
             hero: false,
-            contact: true
+            contact: false,
+            guisados: true
+          }
+        }
+      }else if(action.payload.hero == false || action.payload.guisados == false){
+        return {
+          ...state,
+          view:{
+            hero: false,
+            contact: true,
+            guisados: false
           }
         }
       }

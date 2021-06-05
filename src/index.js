@@ -16,7 +16,8 @@ const initialState = {
   },
   view: {
     hero: false,
-    contact: false
+    contact: false,
+    guisados: false
   }
 }
 
@@ -28,5 +29,5 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  
+
   document.getElementById("app"))

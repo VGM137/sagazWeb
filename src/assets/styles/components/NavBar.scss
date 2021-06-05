@@ -40,7 +40,7 @@
   margin: 10px auto;
   font-size: 1.2em;
 }
-.guisado, .contacto {
+.guisado, .contacto, .guisadosLink {
   display: flex;
   text-decoration: none;
   height: 40px;
@@ -53,14 +53,7 @@
   justify-content: center;
   align-items: center;
 }
-.guisado:hover{
-  background-color: rgba(255, 206, 0, 1);
-  width: 110%;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  height: 50px;
-}
-.contacto:hover{
+.guisado:hover, .contacto:hover, .guisadosLink:hover{
   background-color: rgba(255, 206, 0, 1);
   width: 110%;
   border-bottom-left-radius: 0;
@@ -125,7 +118,7 @@
   .guisado, .contacto {
     width: auto;
   }
-  .guisado:hover, .contacto:hover{
+  .guisado:hover, .contacto:hover, .guisadosLink:hover{
     border-radius: 50px;
     width: 100%;
     height: 40px;
@@ -142,6 +135,9 @@
     max-height: 100px;
     display: flex;
   }
+  .bar-menu-icons{
+    display: none
+  }
   .logo-container{
     width: 25%;
   }
@@ -149,7 +145,7 @@
     width: 100%;
     margin: 10px auto
   }
-  .guisado, .contacto{
+  .guisado, .contacto, .guisadosLink{
     display: none
   }
 }
