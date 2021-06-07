@@ -14,7 +14,7 @@ const NavBar = (props) => {
     console.log(e)
     console.log(e.target.parentElement.parentElement.parentElement.parentElement.parentElement.lastChild.scrollTop)
     console.log(window.innerWidth)
-    if(window.innerWidth > 1025){
+    if(window.innerWidth >= 1025){
       e.target.parentElement.parentElement.parentElement.parentElement.parentElement.lastChild.scrollTop = 0
     }else{
       e.target.parentElement.parentElement.parentElement.parentElement.parentElement.scrollTop = 0

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import NavBar from '../components/NavBar'
-import Content from '../components/Content'
+import HomeContent from '../components/HomeContent'
 import '../assets/styles/App.scss'
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className='App'>
       <NavBar />
-      <Content />
+      <HomeContent />
     </div>
   )
 };

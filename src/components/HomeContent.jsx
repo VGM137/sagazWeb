@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { useInView } from 'react-intersection-observer';
 import { visibleElement } from '../actions'
-import Hero from '../components/Hero'
+import Hero from './Hero'
 import Formulario from './Formulario';
 import Social from './Social'
 import Footer from './Footer'
-import '../assets/styles/components/Content.scss'
+import '../assets/styles/components/HomeContent.scss'
 
 const Content = (props) => {
 
