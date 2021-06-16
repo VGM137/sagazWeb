@@ -3,13 +3,17 @@ import { connect } from 'react-redux';
 import { useInView } from 'react-intersection-observer';
 import { visibleElement } from '../actions'
 import Formulario from './Formulario';
-import Social from './Social'
-import Footer from './Footer'
+import Social from './Social';
+import Footer from './Footer';
+import Categories from './Categories.jsx';
+import Carousel from './Carousel.jsx';
+import CarouselItem from './CarouselItem.jsx';
+import '../assets/styles/components/GuisadosContent.scss'
 
 const GuisadosContent = (props) => {
 
   const { ref, inView, entry} = useInView({
-    threshold: 1,
+    threshold: .5,
   });
 
   const handleVisibility = (el) => {
@@ -19,14 +23,16 @@ const GuisadosContent = (props) => {
   };
 
   return(
-    <div id='content' className='content'>
+    <div id='guisados-content' className='guisados-content'>
       <div id='guisados-spacer' className='guisados-spacer'>
       </div>
       <div ref={ref} id='guisadosDisplay' className='guisadosDisplay'>
         {handleVisibility('guisados')}
-        <h1>
-          Hello guisados
-        </h1>
+        <Categories title='Carne de res'>
+          <Carousel>
+            <CarouselItem />
+          </Carousel>
+        </Categories>
       </div>
       <Formulario />
       <Social />
