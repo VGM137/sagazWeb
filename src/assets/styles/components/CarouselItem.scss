@@ -1,0 +1,32 @@
+.carousel-itemWrap{
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  width: 400px;
+  height: 200px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 450ms all;
+  -webkit-transform-origin: center left;
+        transform-origin: center left;
+}
+.carousel-item{
+  background-color: white;
+  width: inherit;
+  height: inherit;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: 'title title'
+                       'image text'
+}
+.carousel-item_titleWrap{
+  grid-area: title;
+}
+.carousel-item_imageWrap{
+  grid-area: image
+}
+.carousel-item_description{
+  grid-area: text
+}
