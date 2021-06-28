@@ -31,6 +31,9 @@ const GuisadosContent = (props) => {
         <Categories title='Carne de res'>
           <Carousel>
             <CarouselItem />
+            <CarouselItem />
+            <CarouselItem />
+            <CarouselItem />
           </Carousel>
         </Categories>
       </div>
