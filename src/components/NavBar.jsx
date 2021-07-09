@@ -5,14 +5,15 @@ import { visibleElement } from '../actions';
 import '../assets/styles/components/NavBar.scss';
 import logo from '../assets/static/zagaz-04.png';
 
+
 const NavBar = (props) => {
   const heroIsVisible = props.view.hero;
   const contatcIsVisible = props.view.contact;
   const guisadosIsVisible = props.view.guisados;
 
   const handleClick = (e) => {
+
     console.log(e)
-    console.log(e.target.parentElement.parentElement.parentElement.parentElement.parentElement.lastChild.scrollTop)
     console.log(window.innerWidth)
     if(window.innerWidth >= 1025){
       e.target.parentElement.parentElement.parentElement.parentElement.parentElement.lastChild.scrollTop = 0
@@ -49,7 +50,7 @@ const NavBar = (props) => {
                   to='/guisados'
                   id="guisadosLink"
                   className="guisadosLink yellow"
-                  onClick={handleClick}>
+                  onClick={() => handleClick(window.event, 'guisados')}>
                     Guisados
                 </Link>
               :
@@ -57,7 +58,7 @@ const NavBar = (props) => {
                   to='/guisados'
                   id="guisadosLink"
                   className="guisadosLink"
-                  onClick={handleClick}>
+                  onClick={() => handleClick(window.event)}>
                     Guisados
                 </Link>
             }
@@ -79,11 +80,12 @@ const NavBar = (props) => {
 const mapStateToProps = state => {
   return {
     view: state.view,
+    guisados: state.guisados,
   }
 };
 
 const dispatchStateToProps = {
-  visibleElement,
+  visibleElement
 };
 
 export default connect(mapStateToProps, dispatchStateToProps)(NavBar);

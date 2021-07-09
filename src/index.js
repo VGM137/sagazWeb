@@ -18,7 +18,8 @@ const initialState = {
     hero: false,
     contact: false,
     guisados: false
-  }
+  },
+  guisados: []
 }
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

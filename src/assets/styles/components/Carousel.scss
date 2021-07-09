@@ -6,7 +6,7 @@
 }
 
 .carousel::-webkit-scrollbar{
-  height: 10px;
+  height: 5px;
   width: 0;
 }
 .carousel::-webkit-scrollbar-track{
@@ -29,7 +29,7 @@
   transition: 350ms transform;
   transition: 350ms transform, 350ms -webkit-transform;
 /*   font-size: 0; */
-  white-space: nowrap;
+  display: flex;
   margin: 25px 0 35px 0px;
 }
 

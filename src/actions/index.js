@@ -11,4 +11,9 @@ export const clearForm = (payload) => ({
 export const visibleElement = (payload) => ({
   type: 'SET_VISIBILITY',
   payload
-})
+});
+
+export const getSagazData = (payload) => ({
+  type: 'GET_GUISADOS',
+  payload
+});

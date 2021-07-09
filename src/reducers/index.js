@@ -83,6 +83,12 @@ const reducer = (state, action) => {
         }
       }
 
+  case 'GET_GUISADOS':
+    return {
+      ...state,
+      guisados: action.payload
+    }
+
     default :
     return state;
   }
