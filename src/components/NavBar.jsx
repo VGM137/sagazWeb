@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { visibleElement } from '../actions';
 import '../assets/styles/components/NavBar.scss';
 import logo from '../assets/static/zagaz-04.png';
+import Menu from '../assets/static/menu.svg';
 
 
 const NavBar = (props) => {
@@ -12,27 +13,41 @@ const NavBar = (props) => {
   const guisadosIsVisible = props.view.guisados;
 
   const handleClick = (e) => {
-
-    console.log(e)
-    console.log(window.innerWidth)
     if(window.innerWidth >= 1025){
       e.target.parentElement.parentElement.parentElement.parentElement.parentElement.lastChild.scrollTop = 0
     }else{
       e.target.parentElement.parentElement.parentElement.parentElement.parentElement.scrollTop = 0
     }
-
   };
+
+  const openClose = (e) => {
+
+    console.log(e)
+
+    const wrapperClassList = e.target.parentElement.childNodes[2].classList
+    if(wrapperClassList.length === 2){
+      console.log(wrapperClassList.length)
+      wrapperClassList.remove('show')
+    }else{
+      wrapperClassList.add('show')
+    }
+
+  }
 
   return (
     <div className="bar-menu" id="bar-menu">
+
+      <Menu className='bar-menu_ham_icon' alt="" onClick={openClose} />
+
       <div className="logo">
-          <figure className="logo-container">
-            <Link to='/' className='link'>
-              <img className="logo-img" src={logo} alt="logo" width="auto" />
-            </Link>
-          </figure>
+        <figure className="logo-container">
+          <Link to='/' className='link'>
+            <img className="logo-img" src={logo} alt="logo" width="auto" />
+          </Link>
+        </figure>
         <h2 className="slogan">El deleite de su paladar</h2>
       </div>
+
       <nav className="bar-menu-icons">
         <ol>
           <li>

@@ -49,43 +49,28 @@ const GuisadosContent = (props) => {
       </div>
       <div ref={ref} id='guisadosDisplay' className='guisadosDisplay'>
       {handleVisibility('guisados')}
+
       <Categories title='Carne de res'>
         <Carousel>
           {guisadosIsEnable
             ? 
-              /* console.log(props.guisados) */
               props.guisados.map(guisado => 
-                /* console.log(guisado.title) */
                 <CarouselItem 
                   cover={ guisado.cover } 
                   description={ guisado.description } 
                   type={ guisado.type } 
                   hotness={ guisado.hotness } 
                   title={ guisado.title }
+                  key={ guisado._id }
                 />
               )
             :
             console.log('Not enable')
           }
-{/*           {guisadosIsEnable
-            ? props.guisados[0].data.forEach(guisado => 
-                <CarouselItem title={ guisado.title } />
-              )
-            :
-              console.log('error')
-          } */}
         </Carousel>
       </Categories>
-{/*         
 
-
-<CarouselItem />
-<CarouselItem />
-<CarouselItem />
-
-
-</div> */}
-  </div>
+    </div>
       <Formulario />
       <Social />
       <Footer />
