@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/styles/components/CarouselItem.scss';
 
-const CarouselItem = ({ cover, description, type, hotness, title, }) => {
+const CarouselItem = ({ tab, cover, description, type, hotness, title, }) => {
   return (
     <div className='carousel-itemWrap'>
       <div className='carousel-item'>
@@ -12,7 +12,7 @@ const CarouselItem = ({ cover, description, type, hotness, title, }) => {
             </div>
           </div>
           <div className='carousel-item_title'>
-            {title}
+            {tab}
           </div>
           <div className='carousel-item_emptyspace right'>
             <div className='carousel-item_emptyspace3'>

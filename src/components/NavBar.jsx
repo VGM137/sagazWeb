@@ -23,8 +23,11 @@ const NavBar = (props) => {
   const openClose = (e) => {
 
     console.log(e)
+    const barMenu = document.getElementsByClassName("bar-menu-icons")
+    
+    console.log(barMenu[0].classList)
 
-    const wrapperClassList = e.target.parentElement.childNodes[2].classList
+    const wrapperClassList = barMenu[0].classList
     if(wrapperClassList.length === 2){
       console.log(wrapperClassList.length)
       wrapperClassList.remove('show')

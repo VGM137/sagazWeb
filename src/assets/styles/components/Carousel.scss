@@ -28,7 +28,7 @@
   transition: 350ms -webkit-transform;
   transition: 350ms transform;
   transition: 350ms transform, 350ms -webkit-transform;
-/*   font-size: 0; */
+  width: fit-content;
   display: flex;
   margin: 25px 0 35px 0px;
 }

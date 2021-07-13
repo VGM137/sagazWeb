@@ -55,18 +55,21 @@ const GuisadosContent = (props) => {
           {guisadosIsEnable
             ? 
               props.guisados.map(guisado => 
+                /* console.log(guisado.title.split(" ")[0]) */
                 <CarouselItem 
+                  tab={ guisado.title.split(" ")[0] }
                   cover={ guisado.cover } 
                   description={ guisado.description } 
-                  type={ guisado.type } 
+                 /* type={ guisado.type } */
                   hotness={ guisado.hotness } 
                   title={ guisado.title }
-                  key={ guisado._id }
+                  key={ guisado._id } 
                 />
               )
             :
             console.log('Not enable')
           }
+          <div width='300px'></div>
         </Carousel>
       </Categories>
 
