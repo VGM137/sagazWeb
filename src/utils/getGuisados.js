@@ -10,10 +10,7 @@ class guisadosAPI {
   async getSagazData(){
     try{
       const response = await fetch(this.guisadosAPI);
-      
-      console.log(response)
       this.data = await response.json();
-      console.log(this.data);
       
       return this.data;
     }catch(error){

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { useInView } from 'react-intersection-observer';
-import { visibleElement, getSagazData } from '../actions'
+import { visibleElement, allData, resData, polloData, puercoData, verdurasData } from '../actions'
 import Formulario from './Formulario';
 import Social from './Social';
 import Footer from './Footer';
@@ -13,19 +13,63 @@ import guisadosAPI from '../utils/getGuisados'
 
 const GuisadosContent = (props) => {
 
-  let guisadosIsEnable = props.guisados.length > 0 
+  let guisadosIsEnable = props.allGuisados.length > 0 
+  let resIsEnable = props.resGuisados.length > 0 
+  let puercoIsEnable = props.puercoGuisados.length > 0 
+  let polloIsEnable = props.polloGuisados.length > 0 
+  let verdurasIsEnable = props.verdurasGuisados.length > 0 
   let sagazData = new guisadosAPI
 
-  if(props.guisados.length <= 0){
+  if(props.allGuisados.length <= 0){
     try{
       sagazData.getSagazData()
         .then(result => {
           let sagazData = result
-          let theData = [];
+          let allData = [];
+          let resData = [];
+          let puercoData = [];
+          let polloData = [];
+          let verdurasData = [];
           for(let n = 0; n < sagazData.data.length; n++){
-            theData.push(sagazData.data[n])
+            allData.push(sagazData.data[n])
           }
-          props.getSagazData(theData)
+          allData.forEach(data => {
+            let type = data.type
+            type.forEach(type => {
+              if(type === 'res'){
+                resData.push(data)
+              }
+            })
+          })
+          allData.forEach(data => {
+            let type = data.type
+            type.forEach(type => {
+              if(type === 'puerco'){
+                puercoData.push(data)
+              }
+            })
+          })
+          allData.forEach(data => {
+            let type = data.type
+            type.forEach(type => {
+              if(type === 'pollo'){
+                polloData.push(data)
+              }
+            })
+          })
+          allData.forEach(data => {
+            let type = data.type
+            type.forEach(type => {
+              if(type === 'vegetariano'){
+                verdurasData.push(data)
+              }
+            })
+          })
+          props.allData(allData)
+          props.resData(resData)
+          props.puercoData(puercoData)
+          props.polloData(polloData)
+          props.verdurasData(verdurasData)
         })
 /*       console.log(props.guisados) */
     }catch(err){
@@ -50,28 +94,94 @@ const GuisadosContent = (props) => {
       <div ref={ref} id='guisadosDisplay' className='guisadosDisplay'>
       {handleVisibility('guisados')}
 
-      <Categories title='Carne de res'>
-        <Carousel>
-          {guisadosIsEnable
-            ? 
-              props.guisados.map(guisado => 
-                /* console.log(guisado.title.split(" ")[0]) */
+      {resIsEnable
+        ? 
+          <Categories title='Carne de res'>
+            <Carousel>
+              { props.resGuisados.map(guisado =>
                 <CarouselItem 
                   tab={ guisado.title.split(" ")[0] }
                   cover={ guisado.cover } 
                   description={ guisado.description } 
-                 /* type={ guisado.type } */
                   hotness={ guisado.hotness } 
                   title={ guisado.title }
                   key={ guisado._id } 
                 />
-              )
-            :
-            console.log('Not enable')
-          }
-          <div width='300px'></div>
-        </Carousel>
-      </Categories>
+                )
+              }
+              <div width='300px'></div>
+            </Carousel>
+          </Categories>
+        :
+          console.log('Not enable')
+      }
+
+      {puercoIsEnable
+        ?
+          <Categories title='Carne de puerco'>
+            <Carousel>
+              {
+                props.puercoGuisados.map(guisado =>
+                  <CarouselItem 
+                    tab={ guisado.title.split(" ")[0] }
+                    cover={ guisado.cover } 
+                    description={ guisado.description } 
+                    hotness={ guisado.hotness } 
+                    title={ guisado.title }
+                    key={ guisado._id } 
+                  />
+                )
+              }
+              <div width='300px'></div>
+            </Carousel>
+          </Categories>
+        :
+          console.log('Not enable')
+      }
+
+      {polloIsEnable
+        ? 
+          <Categories title='Carne de pollo'>
+            <Carousel>
+              { props.polloGuisados.map(guisado =>
+                  <CarouselItem 
+                    tab={ guisado.title.split(" ")[0] }
+                    cover={ guisado.cover } 
+                    description={ guisado.description } 
+                    hotness={ guisado.hotness } 
+                    title={ guisado.title }
+                    key={ guisado._id } 
+                  />
+                )
+              }
+              <div width='300px'></div>
+            </Carousel>
+          </Categories>
+        :
+        console.log('Not enable')
+      }
+
+      {verdurasIsEnable
+        ? 
+          <Categories title='Verduras'>
+            <Carousel>
+              { props.verdurasGuisados.map(guisado =>
+                 <CarouselItem 
+                   tab={ guisado.title.split(" ")[0] }
+                   cover={ guisado.cover } 
+                   description={ guisado.description } 
+                   hotness={ guisado.hotness } 
+                   title={ guisado.title }
+                   key={ guisado._id } 
+                 />
+                )
+              }
+              <div width='300px'></div>
+            </Carousel>
+          </Categories>
+        :
+        console.log('Not enable')
+      }
 
     </div>
       <Formulario />
@@ -83,13 +193,21 @@ const GuisadosContent = (props) => {
 
 const mapStateToProps = state => {
   return {
-    guisados: state.guisados
+    allGuisados: state.allGuisados,
+    resGuisados: state.resGuisados,
+    puercoGuisados: state.puercoGuisados,
+    polloGuisados: state.polloGuisados,
+    verdurasGuisados: state.verdurasGuisados
   }
 }
 
 const dispatchStateToProps = {
   visibleElement,
-  getSagazData
+  allData,
+  resData,
+  puercoData,
+  polloData,
+  verdurasData
 };
 
 export default connect(mapStateToProps, dispatchStateToProps)(GuisadosContent);

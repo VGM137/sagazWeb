@@ -83,10 +83,34 @@ const reducer = (state, action) => {
         }
       }
 
-  case 'GET_GUISADOS':
+  case 'ALL_DATA':
     return {
       ...state,
-      guisados: action.payload
+      allGuisados: action.payload
+    }
+
+  case 'RES_DATA':
+    return {
+      ...state,
+      resGuisados: action.payload
+    }
+
+  case 'PUERCO_DATA':
+    return {
+      ...state,
+      puercoGuisados: action.payload
+    }
+
+  case 'POLLO_DATA':
+    return {
+      ...state,
+      polloGuisados: action.payload
+    }
+
+  case 'VERDURAS_DATA':
+    return {
+      ...state,
+      verdurasGuisados: action.payload
     }
 
     default :
