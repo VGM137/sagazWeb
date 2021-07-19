@@ -1,5 +1,7 @@
 import React from 'react';
 import '../assets/styles/components/CarouselItem.scss';
+import chileNo from '../assets/static/chile_no.png'
+import chileSi from '../assets/static/chile_si.png'
 
 const CarouselItem = ({ tab, cover, description, type, hotness, title, }) => {
   return (
@@ -28,8 +30,41 @@ const CarouselItem = ({ tab, cover, description, type, hotness, title, }) => {
           <div className='carousel-item_description'>
             <h1>{title}</h1>
             <h2>{description}</h2>
-            <h2>{type}</h2>
-            <h2>{hotness}</h2>
+            <div className='carousel-item_description_hotness'>
+              {hotness == 0 &&
+                  <>
+                    <figure className='carousel-item_description_hotness-wrap'>
+                      <img className='carousel-item_description_hotness-img' src={chileNo} alt="" />
+                    </figure>
+                    <figure className='carousel-item_description_hotness-wrap'>
+                      <img className='carousel-item_description_hotness-img' src={chileNo} alt="" />
+                    </figure>
+                    <h2 className='carousel-item_description_hotness-text'>No pica</h2>
+                  </>
+                }
+              {hotness === 1 &&
+                  <>
+                    <figure className='carousel-item_description_hotness-wrap'>
+                      <img className='carousel-item_description_hotness-img' src={chileSi} alt="" />
+                    </figure>
+                    <figure className='carousel-item_description_hotness-wrap'>
+                      <img className='carousel-item_description_hotness-img' src={chileNo} alt="" />
+                    </figure>
+                    <h2 className='carousel-item_description_hotness-text'>Pica poquito</h2>
+                  </>
+              }
+              {hotness === 2 &&
+                  <>
+                    <figure className='carousel-item_description_hotness-wrap'>
+                      <img className='carousel-item_description_hotness-img' src={chileSi} alt="" />
+                    </figure>
+                    <figure className='carousel-item_description_hotness-wrap'>
+                      <img className='carousel-item_description_hotness-img' src={chileSi} alt="" />
+                    </figure>
+                    <h2 className='carousel-item_description_hotness-text'>Pica bastante</h2>
+                  </>
+              }
+            </div>
           </div>
           </div>
       </div>

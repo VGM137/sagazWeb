@@ -4,7 +4,7 @@
   position: relative;
   display: inline-block;
   width: 350px;
-  height: 200px;
+  height: 225px;
   margin-right: 10px;
   cursor: pointer;
   transition: 450ms all;
@@ -83,9 +83,11 @@
   color:black;
   border-top-right-radius: 10px;
   display: grid;
-  grid-template-rows: 20% 40% 20% 20%;
-  margin: 5px 0;
+  grid-template-rows: 20% 60% 20%;
+  padding: 5px 0;
   height: auto;
+  max-height: 191px;
+  box-sizing: border-box;
 }
 .carousel-item_description h1, h2{
   font-size: 1em;
@@ -100,11 +102,28 @@
 .carousel-item_description h1{
   font-weight: 400;
 }
+.carousel-item_description h2{
+  font-weight: 300;
+}
+.carousel-item_description_hotness{
+  min-height: 25px;
+  display: flex;
+}
+.carousel-item_description_hotness-wrap{
+  height: 80%;
+  margin: auto;
+}
+.carousel-item_description_hotness-img{
+  height: 100%;
+}
+.carousel-item_description_hotness-text{
+  margin-left: 20px;
+}
 
 @media screen and (max-width: 681px){
   .carousel-itemWrap{
     width: 200px;
-    height: 350px;
+    height: 400px;
   }
   .carousel-item{
     grid-template-rows: 10% 90%;
@@ -128,5 +147,6 @@
     margin: 0 15px;
     padding: 5px 0;
     box-sizing: border-box;
+    max-height: none;
   }
 }
