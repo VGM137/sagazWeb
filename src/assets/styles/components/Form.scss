@@ -155,7 +155,7 @@
   }
 }
 
-@media screen and (max-width: 620px){
+@media screen and (max-width: 681px){
   .form h1{
     width: 80%
   }
@@ -167,5 +167,14 @@
   }
   .message-advice{
     margin: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .form, .form h1, .form h2{
+    width: 90%
+  }
+  .form-item{
+    width: 100%;
   }
 }

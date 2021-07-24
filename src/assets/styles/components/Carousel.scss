@@ -6,12 +6,12 @@
 }
 
 .carousel::-webkit-scrollbar{
-  height: 5px;
+  height: 8px;
   width: 0;
 }
 .carousel::-webkit-scrollbar-track{
   background: rgba(211, 211, 211, 0);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 .carousel::-webkit-scrollbar-thumb{
   background: rgba(128, 128, 128, 0);
@@ -46,6 +46,9 @@
 }
 
 @media screen and (max-width: 681px){
+  .carousel {
+    padding-left: 15px;
+  }
   .carousel__container:hover .carousel-itemWrap:hover {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);

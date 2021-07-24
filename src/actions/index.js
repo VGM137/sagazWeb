@@ -37,3 +37,8 @@ export const verdurasData = (payload) => ({
   type: 'VERDURAS_DATA',
   payload
 });
+
+/* export const menuIsVisible = (payload) => ({
+  type: 'MENU_IS_VISIBLE',
+  payload
+}); */

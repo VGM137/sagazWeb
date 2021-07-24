@@ -78,7 +78,7 @@ const GuisadosContent = (props) => {
   }
 
   const { ref, inView, entry} = useInView({
-    threshold: .5,
+    threshold: .1,
   });
 
   const handleVisibility = (el) => {

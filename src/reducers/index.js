@@ -113,6 +113,12 @@ const reducer = (state, action) => {
       verdurasGuisados: action.payload
     }
 
+/*   case 'MENU_IS_VISIBLE':
+    return {
+      ...state,
+      menuIsVisible: action.payload
+    }
+ */
     default :
     return state;
   }

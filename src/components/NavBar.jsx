@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { visibleElement } from '../actions';
+import { visibleElement/* , menuIsVisible */ } from '../actions';
 import '../assets/styles/components/NavBar.scss';
 import logo from '../assets/static/zagaz-04.png';
 import Menu from '../assets/static/menu.svg';
@@ -22,17 +22,24 @@ const NavBar = (props) => {
 
   const openClose = (e) => {
 
-    console.log(e)
     const barMenu = document.getElementsByClassName("bar-menu-icons")
-    
-    console.log(barMenu[0].classList)
+    const guisadoButton = document.getElementById("menu-del-dia")
+    const guiLinkButton = document.getElementById("guisadosLink")
+    const contacto = document.getElementById("contacto")
 
     const wrapperClassList = barMenu[0].classList
     if(wrapperClassList.length === 2){
-      console.log(wrapperClassList.length)
       wrapperClassList.remove('show')
+      guisadoButton.style.boxShadow = null
+      guiLinkButton.style.boxShadow = null
+      contacto.style.boxShadow = null
+      /* props.menuIsVisible(false) */
     }else{
       wrapperClassList.add('show')
+      guisadoButton.style.boxShadow = '0px 0px 16px 0px #626262'
+      guiLinkButton.style.boxShadow = '0px 0px 16px 0px #626262'
+      contacto.style.boxShadow = '0px 0px 16px 0px #626262'
+      /* props.menuIsVisible(true) */
     }
 
   }
@@ -52,8 +59,8 @@ const NavBar = (props) => {
       </div>
 
       <nav className="bar-menu-icons">
-        <ol>
-          <li>
+        <ol className='bar-menu-icons-list'>
+          <li className='bar-menu-icons-list-item'>
             {heroIsVisible
               ?
                 <a id="menu-del-dia" className="guisado yellow" href='/#hero-spacer'>Menú</a>
@@ -98,12 +105,13 @@ const NavBar = (props) => {
 const mapStateToProps = state => {
   return {
     view: state.view,
-    guisados: state.guisados,
+    /* guisados: state.guisados, */
   }
 };
 
 const dispatchStateToProps = {
-  visibleElement
+  visibleElement,
+  /* menuIsVisible */
 };
 
 export default connect(mapStateToProps, dispatchStateToProps)(NavBar);
