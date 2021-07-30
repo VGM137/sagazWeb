@@ -34,12 +34,12 @@
 }
 
 .carousel__container:hover .carousel-itemWrap {
-  opacity: 0.3;
+  opacity: 0.7;
 }
 
 .carousel__container:hover .carousel-itemWrap:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   opacity: 1;
   position: relative;
   z-index: 1;

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useForm } from '@formspree/react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { formChange } from '../actions'
 import '../assets/styles/components/Form.scss'
 import SubmitMessage from '../components/SubmitMessage'
@@ -39,7 +40,7 @@ const Formulario = (props) => {
       </div>
       <div id="form" className="form">
         <h1 className="">Prepara tu evento con una taquiza!</h1>
-        <h2 className="">Escoge entre una amplia variedad de guisados, pide tu cotización, nos pondremos en contacto contigo a la brevedad.</h2>
+        <h2 className=""><Link to='/guisados' className='form_link'>Escoge</Link> entre una amplia variedad de guisados, pide tu cotización, nos pondremos en contacto contigo a la brevedad.</h2>
         <form id='form-form' className="form-form" onSubmit={handleSubmit}>
           <input 
             type="text" 

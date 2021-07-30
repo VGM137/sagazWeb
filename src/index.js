@@ -24,6 +24,7 @@ const initialState = {
   puercoGuisados: [],
   polloGuisados: [],
   verdurasGuisados: [],
+  derivadosGuisados: [],
   /* menuIsVisible: false, */
 }
 

@@ -1,5 +1,5 @@
 .form h1{
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   color: white;
 }
@@ -11,7 +11,6 @@
   max-width: inherit;
   line-height: inherit;
 }
-
 .form{
   height: fit-content;
   width: 80%;
@@ -26,6 +25,14 @@
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   box-sizing: border-box;
+}
+.form a{
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: rgba(255, 206, 0, 1);
+}
+.form a:hover{
+  color: rgb(209, 167, 0)
 }
 .form-texto{
   width: 40%;

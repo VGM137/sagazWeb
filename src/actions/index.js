@@ -38,6 +38,11 @@ export const verdurasData = (payload) => ({
   payload
 });
 
+export const derivadosData = (payload) => ({
+  type: 'DERIVADOS_DATA',
+  payload
+});
+
 /* export const menuIsVisible = (payload) => ({
   type: 'MENU_IS_VISIBLE',
   payload
