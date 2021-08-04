@@ -1,0 +1,52 @@
+.guisadosDisplay{
+  margin-right: 30px;
+}
+.guisados-content{
+  height: 100vh;
+  width: 100%;
+  display: block;
+  grid-area: contenido;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.guisados-spacer{
+  height: 30px
+}
+.guisados-content::-webkit-scrollbar{
+  width: 10px;
+}
+.guisados-content::-webkit-scrollbar-track{
+  background: rgba(211, 211, 211, 0);
+  border-radius: 5px;
+}
+.guisados-content::-webkit-scrollbar-thumb{
+  background: rgba(128, 128, 128, 0);
+  border-radius: 5px;
+}
+.guisados-content:hover::-webkit-scrollbar-track{
+  background: rgba(211, 211, 211, .6);
+}
+.guisados-content:hover::-webkit-scrollbar-thumb{
+  background: rgba(128, 128, 128, .6);
+}
+
+@media screen and (max-width: 1025px){
+  .guisados-content{
+    height: fit-content;
+    display: block;
+  }
+  .guisados-spacer{
+    height: 80px;
+    position: absolute;
+    top: 0;
+  }
+  .guisados-content::-webkit-scrollbar{
+    display: none
+  }
+}
+
+@media screen and (max-width: 681px){
+  .guisadosDisplay{
+    margin-right: 15px;
+  }
+}

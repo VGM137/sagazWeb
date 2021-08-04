@@ -1,13 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux'
-/* import { menuIsVisible } from '../actions'; */
-import NavBar from '../components/NavBar'
-import HomeContent from '../components/HomeContent'
-import '../assets/styles/App.scss'
+import { connect } from 'react-redux';
+import NavBar from '../components/NavBar';
+import GuisadosContent from '../components/GuisadosContent';
+import '../assets/styles/App.scss';
 
-const Home = (props) => {
-
-/*   const menuIsVisible = props.menuIsVisible */
+const Guisados = () => {
 
   const listening = (e) => {
     console.log(e)
@@ -28,19 +25,9 @@ const Home = (props) => {
   return (
     <div className='App' onClick={listening}>
       <NavBar />
-      <HomeContent />
+      <GuisadosContent />
     </div>
   )
 };
 
-/* const mapStateToProps = state => {
-  return {
-    menuIsVisible: state.menuIsVisible
-  }
-}
-
-const dispatchStateToProps = {
-  menuIsVisible,
-} */
-
-export default connect(null, null)(Home);
+export default connect(null, null)(Guisados);

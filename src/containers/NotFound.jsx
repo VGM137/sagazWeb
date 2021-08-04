@@ -1,8 +1,12 @@
 import React from 'react';
+import NavBar from '../components/NavBar'
 
 const NotFound = () => (
   <>
-    <h1>No encontrado</h1>
+    <div className='App'>
+      <NavBar />
+      <h1>No encontrado</h1>
+    </div>
   </>
 );
 

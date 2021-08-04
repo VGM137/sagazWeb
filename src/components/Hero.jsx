@@ -1,27 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { useInView } from 'react-intersection-observer';
-import { visibleElement } from '../actions'
 import '../assets/styles/components/Hero.scss';
 import siHay from '../assets/static/sihaysihay.jpg'
 import menu from '../assets/static/menu-del-dia.jpg'
 
 const Hero = (props) => {
-  
-  const { ref, inView, entry} = useInView({
-    threshold: .1,
-  });
-
-  const handleVisibility = () => {
-    props.visibleElement({
-      hero: inView
-    })
-  }
 
   return (
     <>
-      <div ref={ref} id='hero-spacer' className='hero-spacer' >
-        {handleVisibility()}
+      <div id='hero-spacer' className='hero-spacer' >
       </div>
       <div className="hero" id="hero">
         <figure className="hero-imgContainer" action="index.html" method="post">
@@ -45,8 +32,4 @@ const Hero = (props) => {
   )
 };
 
-const dispatchStateToProps = {
-  visibleElement,
-}
-
-export default connect(null, dispatchStateToProps)(Hero);
+export default connect(null, null)(Hero);

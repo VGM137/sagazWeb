@@ -1,5 +1,5 @@
 const reducer = (state, action) => {
-  
+
   switch(action.type){
     case 'FORM_CHANGE':
       if(action.payload.name){
@@ -39,7 +39,7 @@ const reducer = (state, action) => {
           }
         }
       }
-    
+
     case 'CLEAR_FORM':
       return{
         ...state,
@@ -59,19 +59,72 @@ const reducer = (state, action) => {
           ...state,
           view:{
             hero: action.payload.hero,
-            contact: false
+            contact: false,
+            guisados: false
           }
         }
-      }else if(action.payload.hero == false){
+      }else if(action.payload.guisados){
         return {
           ...state,
           view:{
             hero: false,
-            contact: true
+            contact: false,
+            guisados: true
+          }
+        }
+      }else if(action.payload.hero == false || action.payload.guisados == false){
+        return {
+          ...state,
+          view:{
+            hero: false,
+            contact: true,
+            guisados: false
           }
         }
       }
 
+  case 'ALL_DATA':
+    return {
+      ...state,
+      allGuisados: action.payload
+    }
+
+  case 'RES_DATA':
+    return {
+      ...state,
+      resGuisados: action.payload
+    }
+
+  case 'PUERCO_DATA':
+    return {
+      ...state,
+      puercoGuisados: action.payload
+    }
+
+  case 'POLLO_DATA':
+    return {
+      ...state,
+      polloGuisados: action.payload
+    }
+
+  case 'VERDURAS_DATA':
+    return {
+      ...state,
+      verdurasGuisados: action.payload
+    }
+
+  case 'DERIVADOS_DATA':
+    return {
+      ...state,
+      derivadosGuisados: action.payload
+    }
+
+/*   case 'MENU_IS_VISIBLE':
+    return {
+      ...state,
+      menuIsVisible: action.payload
+    }
+ */
     default :
     return state;
   }

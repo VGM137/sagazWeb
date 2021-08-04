@@ -8,7 +8,10 @@
   grid-template-areas: 'heroImg menuImg'
                        'info info';
   align-items: center;
-  margin: 30px auto;
+  margin: 0 auto 30px auto;
+}
+.hero-spacer{
+  height: 30px
 }
 .hero-imgContainer{
   grid-area: heroImg;
@@ -39,8 +42,8 @@
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  border-bottom-left-radius: 20px; 
-  border-bottom-right-radius: 20px; 
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .hero-title{
   font-size: 2em;
@@ -49,10 +52,11 @@
   margin: 10px auto;
   text-align: center;
   color: white;
+  max-width: fit-content;
 }
 .subtextos{
   font-size: 1.2em;
-  line-height: 1.2em; 
+  line-height: 1.2em;
 }
 .hero-link{
   color: rgba(255, 206, 0, 1);
@@ -70,6 +74,7 @@
   .hero{
     grid-template-columns: 300px 300px;
     grid-template-rows: 300px;
+    margin: 30px auto;
     scroll-margin-top: 35em;
   }
 }

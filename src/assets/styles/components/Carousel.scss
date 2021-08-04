@@ -1,0 +1,56 @@
+.carousel {
+  overflow: scroll;
+  padding-left: 30px;
+  width: 100%;
+  position: relative;
+}
+
+.carousel::-webkit-scrollbar{
+  height: 8px;
+  width: 0;
+}
+.carousel::-webkit-scrollbar-track{
+  background: rgba(211, 211, 211, 0);
+  border-radius: 4px;
+}
+.carousel::-webkit-scrollbar-thumb{
+  background: rgba(128, 128, 128, 0);
+  border-radius: 5px;
+}
+.carousel:hover::-webkit-scrollbar-track{
+  background: rgba(211, 211, 211, .6);
+}
+.carousel:hover::-webkit-scrollbar-thumb{
+  background: rgba(128, 128, 128, .6);
+}
+
+.carousel__container {
+  transition: 350ms -webkit-transform;
+  transition: 350ms transform;
+  transition: 350ms transform, 350ms -webkit-transform;
+  width: fit-content;
+  display: flex;
+  margin: 25px 0 35px 0px;
+}
+
+.carousel__container:hover .carousel-itemWrap {
+  opacity: 0.7;
+}
+
+.carousel__container:hover .carousel-itemWrap:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 681px){
+  .carousel {
+    padding-left: 15px;
+  }
+  .carousel__container:hover .carousel-itemWrap:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
