@@ -41,7 +41,12 @@ const NavBar = (props) => {
       contacto.style.boxShadow = '0px 0px 16px 0px #626262'
       /* props.menuIsVisible(true) */
     }
+  }
 
+  const goContact = () => {
+    let form = document.getElementById('form-spacer')
+    console.log(form)
+    form.scrollIntoView()
   }
 
   return (
@@ -63,9 +68,9 @@ const NavBar = (props) => {
           <li className='bar-menu-icons-list-item'>
             {heroIsVisible
               ?
-                <a id="menu-del-dia" className="guisado yellow" href='/#hero-spacer'>Menú</a>
+                <a id="menu-del-dia" className="guisado yellow" href='/'>Menú</a>
               :
-                <a id="menu-del-dia" className="guisado" href='/#hero-spacer'>Menú</a>
+                <a id="menu-del-dia" className="guisado" href='/'>Menú</a>
             }
           </li>
           <li>
@@ -91,9 +96,9 @@ const NavBar = (props) => {
           <li>
             {contatcIsVisible
               ?
-                <a id="contacto" className="contacto yellow" href='#form-spacer'>Contacto</a>
+                <div id="contacto" className="contacto yellow" onClick={goContact}>Contacto</div>
               :
-                <a id="contacto" className="contacto" href='#form-spacer'>Contacto</a>
+                <div id="contacto" className="contacto" onClick={goContact}>Contacto</div>
             }
           </li>
         </ol>
