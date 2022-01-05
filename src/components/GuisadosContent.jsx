@@ -37,44 +37,55 @@ const GuisadosContent = (props) => {
           }
 
           allData.forEach(data => {
-            let type = data.type
-            type.forEach(type => {
-              if(type === 'res'){
-                resData.push(data)
-              }
-            })
+            if(data.type){
+              let type = data.type
+              console.log(type)
+              type.forEach(type => {
+                if(type === 'res'){
+                  resData.push(data)
+                }
+              })
+            }
           })
           allData.forEach(data => {
             let type = data.type
-            type.forEach(type => {
-              if(type === 'puerco'){
-                puercoData.push(data)
-              }
-            })
+            if(data.type){
+              type.forEach(type => {
+                if(type === 'puerco'){
+                  puercoData.push(data)
+                }
+              })
+            }
           })
           allData.forEach(data => {
             let type = data.type
-            type.forEach(type => {
-              if(type === 'pollo'){
-                polloData.push(data)
-              }
-            })
+            if(data.type){
+              type.forEach(type => {
+                if(type === 'pollo'){
+                  polloData.push(data)
+                }
+              })
+            }
           })
           allData.forEach(data => {
             let type = data.type
-            type.forEach(type => {
-              if(type === 'vegetariano'){
-                verdurasData.push(data)
-              }
-            })
+            if(data.type){
+              type.forEach(type => {
+                if(type === 'vegetariano'){
+                  verdurasData.push(data)
+                }
+              })
+            }
           })
           allData.forEach(data => {
             let type = data.type
-            type.forEach(type => {
-              if(type === 'huevo' || type === 'salchicha'){
-                derivadosData.push(data)
-              }
-            })
+            if(data.type){
+              type.forEach(type => {
+                if(type === 'huevo' || type === 'salchicha'){
+                  derivadosData.push(data)
+                }
+              })
+            }
           })
 
           props.allData(allData)
@@ -84,7 +95,7 @@ const GuisadosContent = (props) => {
           props.verdurasData(verdurasData)
           props.derivadosData(derivadosData)
         })
-/*       console.log(props.guisados) */
+
     }catch(err){
       console.log(err)
     }
